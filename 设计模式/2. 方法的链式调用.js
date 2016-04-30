@@ -35,7 +35,7 @@ Person.prototype.getName = function() {
 // 可以通过回调操作，继续使用链式调用（需要在回调中return this）
 Person.prototype.getAge = function(callback) {
     if(callback){
-        return callback.call(this, null);
+        return callback.call(this, this.name);
     }
     return this.name;
 };
