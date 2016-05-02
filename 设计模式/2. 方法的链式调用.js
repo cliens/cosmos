@@ -32,12 +32,13 @@ Person.prototype.getName = function() {
     return this.name;
 };
 
-// 可以通过回调操作，继续使用链式调用（需要在回调中return this）
+// 可以通过回调进行操作，继续使用链式调用
 Person.prototype.getAge = function(callback) {
-    if(callback){
-        return callback.call(this, this.name);
+    if(callback && typeof callback === 'function'){
+        callback.call(this, this.age);
+        return this;
     }
-    return this.name;
+    return this.age;
 };
 
 
