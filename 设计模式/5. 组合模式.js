@@ -32,7 +32,6 @@
  * 缺点：
  *   对象调用的任何操作都会被传递到子对象，层次体系很大的话，系统的性能将会受到影响。
  *
- *   单体可以被修改
  * */
 
 var Composite = new Interface('Composite', ['add', 'remove', 'getChild']);
